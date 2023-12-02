@@ -1,0 +1,86 @@
+{
+  "{vendor}-{uuApp}-{uuSubApp}": {
+    "useCaseMap": {
+      "sys/uuAppWorkspace/init": {
+        "realization": "api/controllers/UnicornMainController.init",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "sys/uuAppWorkspace/load": {
+        "realization": "api/controllers/UnicornMainController.load",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "sys/uuAppWorkspace/loadBasicData": {
+        "realization": "api/controllers/UnicornMainController.loadBasicData",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "defaultUve": {
+        "realization": "index.html",
+        "httpMethod": "GET",
+        "type": "UVE"
+      },
+      "sys/uuAppWorkspace/initUve": {
+        "realization": "index.html",
+        "httpMethod": "GET",
+        "type": "UVE"
+      },
+      "shoppingLists/list": {
+        "realization": "api/controllers/ShoppingListController.list",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "shoppingLists/shoppingList/get": {
+        "realization": "api/controllers/ShoppingListController.getList",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "shoppingLists/shoppingList/createList": {
+        "realization": "api/controllers/ShoppingListController.createList",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "shoppingLists/shoppingList/delete": {
+        "realization": "api/controllers/ShoppingListController.deleteList",
+        "httpMethod": "DELETE",
+        "type": "CMD"
+      },
+      "shoppingLists/shoppingList/name/update": {
+        "realization": "api/controllers/ShoppingListController.updateListName",
+        "httpMethod": "PUT",
+        "type": "CMD"
+      },
+      "shoppingLists/shoppingList/archived/update": {
+        "realization": "api/controllers/ShoppingListController.archiveList",
+        "httpMethod": "PUT",
+        "type": "CMD"
+      },
+      "shoppingLists/shoppingList/item/create": {
+        "realization": "api/controllers/ShoppingListController.createItem",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "shoppingLists/shoppingList/item/delete": {
+        "realization": "api/controllers/ShoppingListController.deleteItem",
+        "httpMethod": "DELETE",
+        "type": "CMD"
+      },
+      "shoppingLists/shoppingList/item/resolved/update": {
+        "realization": "api/controllers/ShoppingListController.resolveItem",
+        "httpMethod": "PUT",
+        "type": "CMD"
+      },
+      "shoppingLists/shoppingList/authorizedUsers/create": {
+        "realization": "api/controllers/ShoppingListController.createAuthorizedUser",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "shoppingLists/shoppingList/authorizedUsers/delete": {
+        "realization": "api/controllers/ShoppingListController.deleteAuthorizedUser",
+        "httpMethod": "DELETE",
+        "type": "CMD"
+      }
+    }
+  }
+}

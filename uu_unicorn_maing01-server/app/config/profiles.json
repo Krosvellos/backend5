@@ -1,0 +1,74 @@
+{
+  "{asid}": {
+    "profileList": ["AsidAuthorities", "AsidExecutives", "AsidLicenseOwner", "Public"],
+    "useCaseMap": {}
+  },
+  "*": {
+    "profileList": ["Authorities", "Executives", "Readers", "AwidLicenseOwner", "Public", "Authenticated", "AwidInitiator"],
+    "useCaseMap": {
+      "sys/uuAppWorkspace/init": {
+        "sysStateList": ["created", "assigned"],
+        "profileList": ["AwidLicenseOwner", "AwidInitiator"]
+      },
+      "sys/uuAppWorkspace/load": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities", "Executives", "Readers"]
+      },
+      "sys/uuAppWorkspace/loadBasicData": {
+        "sysStateList": ["active"],
+        "profileList": ["Public"]
+      },
+      "defaultUve": {
+        "profileList": ["Public"]
+      },
+      "sys/uuAppWorkspace/initUve": {
+        "sysStateList": ["created"],
+        "profileList": ["Public", "AwidLicenseOwner"]
+      },
+      "shoppingLists/list": {
+        "sysStateList": ["active"],
+        "profileList": ["Executives"]
+      },
+      "shoppingLists/shoppingList/get": {
+        "sysStateList": ["active"],
+        "profileList": ["Executives"]
+      },
+      "shoppingLists/shoppingList/createList": {
+        "sysStateList": ["active"],
+        "profileList": ["Executives"]
+      },
+      "shoppingLists/shoppingList/delete": {
+        "sysStateList": ["active"],
+        "profileList": ["Executives"]
+      },
+      "shoppingLists/shoppingList/name/update": {
+        "sysStateList": ["active"],
+        "profileList": ["Executives"]
+      },
+      "shoppingLists/shoppingList/archived/update": {
+        "sysStateList": ["active"],
+        "profileList": ["Executives"]
+      },
+      "shoppingLists/shoppingList/item/create": {
+        "sysStateList": ["active"],
+        "profileList": ["Executives"]
+      },
+      "shoppingLists/shoppingList/item/delete": {
+        "sysStateList": ["active"],
+        "profileList": ["Executives"]
+      },
+      "shoppingLists/shoppingList/item/resolved/update": {
+        "sysStateList": ["active"],
+        "profileList": ["Executives"]
+      },
+      "shoppingLists/shoppingList/authorizedUsers/create": {
+        "sysStateList": ["active"],
+        "profileList": ["Executives"]
+      },
+      "shoppingLists/shoppingList/authorizedUsers/delete": {
+        "sysStateList": ["active"],
+        "profileList": ["Executives"]
+      }
+    }
+  }
+}
