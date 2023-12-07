@@ -1,4 +1,4 @@
-// MongoDB related imports
+
 const { MongoClient } = require("mongodb");
 const { v4: uuidv4 } = require("uuid");
 
@@ -9,8 +9,8 @@ describe("Shopping List uuCMD tests", () => {
   beforeAll(async () => {
     // Connect to the MongoDB instance and create a connection
     client = await MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true });
-    const db = client.db("TestDatabase"); // Replace 'yourDatabaseName' with your actual database name
-    collection = db.collection("shoppingLists"); // Replace 'shoppingLists' with your collection name
+    const db = client.db("TestDatabase"); 
+    collection = db.collection("shoppingLists"); 
   });
 
   afterAll(async () => {
@@ -19,7 +19,7 @@ describe("Shopping List uuCMD tests", () => {
   });
 
   test("deleteList", async () => {
-    // Create a mock shopping list
+    
     const newList = {
       name: "Westfall Stew",
       ownerId: null,
@@ -46,22 +46,15 @@ describe("Shopping List uuCMD tests", () => {
     const deletedList = await collection.findOne({ _id: createdListId });
 
     console.log("Deleted List:", deletedList);
-    // Check the expected outcomes
     expect(deletedList).toBeNull(); // Ensure the deleted list doesn't exist in the collection
-    // Add further assertions as needed based on your specific response
 
-    // Check if the uuAppErrorMap is empty after deletion
     expect(newList.uuAppErrorMap).toEqual({});
   });
   test("deleteShoppingList with non-existent ID", async () => {
-    // Define a non-existent ID for deletion
     const nonExistentId = "non-existent-id";
 
-    // Simulate attempting to delete a shopping list with a non-existent ID
     const deleteResult = await collection.deleteOne({ _id: nonExistentId });
 
-    // Check the expected outcomes when attempting to delete with non-existent ID
     expect(deleteResult.deletedCount).toBe(0); // Ensure that no documents were deleted
-    // Add further assertions based on your specific response handling or error checks
   });
 });

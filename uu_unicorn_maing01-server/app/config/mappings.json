@@ -43,12 +43,12 @@
       },
       "shoppingLists/shoppingList/delete": {
         "realization": "api/controllers/ShoppingListController.deleteList",
-        "httpMethod": "DELETE",
+        "httpMethod": "POST",
         "type": "CMD"
       },
       "shoppingLists/shoppingList/name/update": {
         "realization": "api/controllers/ShoppingListController.updateListName",
-        "httpMethod": "PUT",
+        "httpMethod": "POST",
         "type": "CMD"
       },
       "shoppingLists/shoppingList/archived/update": {

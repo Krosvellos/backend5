@@ -9,8 +9,8 @@ describe("Shopping List uuCMD tests", () => {
   beforeAll(async () => {
     // Connect to the MongoDB instance and create a connection
     client = await MongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true });
-    const db = client.db("TestDatabase"); // Replace 'yourDatabaseName' with your actual database name
-    collection = db.collection("shoppingLists"); // Replace 'shoppingLists' with your collection name
+    const db = client.db("TestDatabase"); 
+    collection = db.collection("shoppingLists"); 
   });
 
   afterAll(async () => {
@@ -19,7 +19,6 @@ describe("Shopping List uuCMD tests", () => {
   });
 
   test("updateListName", async () => {
-    // Create a mock shopping list with a default name
     const initialList = {
       name: "Crab Cake",
       ownerId: null,
@@ -36,7 +35,6 @@ describe("Shopping List uuCMD tests", () => {
     // Insert the mock shopping list into the collection
     const insertResult = await collection.insertOne(initialList);
 
-    // Retrieve the created list's _id from the insert operation
     const createdListId = insertResult.insertedId;
 
     // Simulate updating the list name
@@ -50,14 +48,11 @@ describe("Shopping List uuCMD tests", () => {
     const updatedList = await collection.findOne({ _id: createdListId });
 
     console.log("Updated List:", updatedList);
-    // Check the expected outcomes
     expect(updatedList).toBeDefined();
     expect(updatedList.name).toBe(updatedName); // Ensure the name is updated
-    // Add further assertions as needed based on your specific response
   });
 
   test("updateListName with empty dtoIn", async () => {
-    // Create a mock shopping list with a default name
     const initialList = {
       name: "Initial Name",
       ownerId: null,
@@ -71,10 +66,8 @@ describe("Shopping List uuCMD tests", () => {
       uuAppErrorMap: {}
     };
 
-    // Insert the mock shopping list into the collection
     const insertResult = await collection.insertOne(initialList);
 
-    // Retrieve the created list's _id from the insert operation
     const createdListId = insertResult.insertedId;
 
     // Simulate updating the list name with an empty dtoIn
@@ -85,9 +78,7 @@ describe("Shopping List uuCMD tests", () => {
         { $set: { name: emptyDtoIn.listName } }
       );
     } catch (error) {
-      // Verify the error handling behavior
       expect(error).toBeDefined(); // Ensure an error was caught
-      // Add further assertions to validate the specific error or its properties
     }
   });
 });

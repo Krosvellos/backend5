@@ -43,5 +43,6 @@
   "log_level": "FATAL",
   "uuapp.appserver.monitoring.accesslog.log_level": "OFF",
   "uuapp.perflog.logger.log_level": "OFF",
-  "uu_app_oidc_providers_oidcg02_uri": "https://uuapp-dev.plus4u.net/uu-oidc-maing02/eca71064ecce44b0a25ce940eb8f053d/oidc"
+  "uu_app_oidc_providers_oidcg02_uri": "https://uuapp-dev.plus4u.net/uu-oidc-maing02/eca71064ecce44b0a25ce940eb8f053d/oidc",
+  "uu_app_binarystore_uri": null
 }
